@@ -1,0 +1,358 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Poiret+One&display=swap"
+        rel="stylesheet">
+        <script src="fie.js"></script>
+</head>
+
+<body class="container-fluid" ng-app="web207" ng-controller="web207-ctrl">
+    <header id="header">
+        <div class="header-wrap">
+            <nav class="secondary-nav border-top border-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="top-menu d-flex flex-wrap justify-content-between">
+
+                            <ul class="left-block list-unstyled d-flex flex-wrap">
+                                <li class="menu-item text-uppercase">Call Us: +84 857 595 060</li>
+                                <li class="menu-item text-uppercase">Mail Us: <a href="#">nguyenmanhha4003@gmai.com</a>
+                                </li>
+                            </ul>
+
+                            <ul class="right-block d-flex flex-wrap list-unstyled justify-content-evenly">
+                                <li class="menu-item">
+                                    <form class="searchbar">
+                                        <input type="text" name="search" placeholder="Search Here..">
+                                        <i class="icon icon-search"></i>
+                                    </form>
+                                </li>
+                                <li class="menu-item dropdown-submenu">
+                                    <a href="#" class="currency-item">USD</a>
+                                    <i class="icon icon-caret-down"></i>
+                                    <ul class="dropdown-currency list-unstyled bg-light">
+                                        <li>
+                                            <a href="#">USD</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">EURO</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Yuan</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">
+                                        <i class="icon icon-heart"></i>WISH LIST </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="CRUD.html">
+                                        <i class="icon icon-user"></i>MY ACCOUNT </a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="#">
+                                        <i class="icon icon-shopping-cart"></i>My Cart </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <nav class="primary-nav">
+                <div class="container max-width">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-md-2 col-sm-6">
+                            <div class="main-logo">
+                                <a href="index.html">
+                                    <img src="images/main-logo.png" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-10 col-sm-6">
+                            <div class="navbar d-flex">
+                                <div class="main-menu stellarnav desktop light">
+                                    <ul class="menu-list list-unstyled">
+                                        <li class="menu-item">
+                                            <a href="index.html" class="text-uppercase item-anchor">Home</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="about.html" class="text-uppercase item-anchor">About</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="shop.html" class="text-uppercase item-anchor">Shop</a>
+                                        </li>
+                                        <li class="menu-item has-sub">
+                                            <a href="#" class="text-uppercase item-anchor" data-effect="Pages">Pages</a>
+                                            <ul class="submenu">
+                                                <li>
+                                                    <a href="about.html" class="text-uppercase">About</a>
+                                                </li>
+                                                <li>
+                                                    <a href="shop.html" class="text-uppercase">Shop</a>
+                                                </li>
+                                                <li>
+                                                    <a href="blog.html" class="text-uppercase">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="styles.html" class="text-uppercase">Styles</a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-product.html" class="text-uppercase">Single
+                                                        Product</a>
+                                                </li>
+                                                <li>
+                                                    <a href="single-post.html" class="text-uppercase">Single Post</a>
+                                                </li>
+                                                <li>
+                                                    <a href="thank-you.html" class="text-uppercase">Thank You</a>
+                                                </li>
+                                                <li>
+                                                    <a href="contact.html" class="text-uppercase">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="blog.html" class="text-uppercase item-anchor">Blog</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="contact.html" class="text-uppercase item-anchor">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="hamburger">
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <h2 style="text-align:center; ">Product Management</h2>
+    <form class="searchbar" style="text-align:center">
+        <input type="text" name="search" placeholder="Search Here..">
+        <i class="icon icon-search"></i>
+    </form>
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNew">
+            <i class="bi bi-plus-circle"></i>
+        </button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Id</th>
+                    <th> Name</th>
+                    <th> Price</th>
+                    <th> Type</th>
+                    <th> Quantity</th>
+                    <th> Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td> {{product.id}}</td>
+                    <td> {{product.name}}</td>
+                    <td> {{product.price}}</td>
+                    <td> {{product.type}}</td>
+                    <td> {{product.quantity}}</td>
+                    <td>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail"
+                            ng-click="getProduct(product.id)"> Detail</button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete"
+                            ng-click="getProduct(product.id)"><i class="bi bi-trash"></i>Delete</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUpdate"
+                            ng-click="getProduct(product.id)"><i class="bi bi-tools"></i> Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hàm lấy dữ liệu -->
+        <div class="modal" id="modalDetail">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>{{selectedProduct.name}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{selectedProduct.img}}" width="400px">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hàm thêm -->
+        <div class="modal" id="modalNew">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Add New Product</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Name:
+                            <input type="text" ng-model="productName"style="width: 460px">
+                        </p>
+                        <p>Price:
+                            <input type="text" ng-model="productPrice" style="width: 460px">
+                        </p>
+                        <p>Type: 
+                            <select name="type" class="form-select" ng-model="productType">
+                            <option value="Diamond">Diamond</option>
+                            <option value="Ruby">Ruby</option>
+                            <option value="Saphire">Saphire</option>
+                        </select></p>
+                        
+                        <p>Quantity:
+                            <input type="text" ng-model="productQuantity"style="width: 460px">
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="newProduct()"> Add</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modalDelete">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Do you want to delete this product?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="deleteProduct(selectedProduct.id)"
+                            data-bs-dismiss="modal"> Yes</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modalUpdate">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Id:
+                            {{selectedProduct.id}}
+                        </p>
+                        <p>Name:
+                            <input type="text" ng-model="Name" style="width: 460px">
+                        </p>
+                        <p>Price:
+                            <input type="text" ng-model="Price" style="width: 460px">
+                        </p>
+                        <p>Type: 
+                            <select name="type" class="form-select" ng-model="Type">
+                            <option value="Diamond">Diamond</option>
+                            <option value="Ruby">Ruby</option>
+                            <option value="Saphire">Saphire</option>
+                        </select></p>
+                        <p>Quantity:
+                            <input type="text" ng-model="Quantity" style="width: 460px">
+                        </p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="updateProduct(selectedProduct.id)"> Update</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <script>
+        var app = angular.module("web207", []);
+        app.controller("web207-ctrl", function ($scope, $http) {
+            //Tạo hàm lấy danh sách sản phẩm
+            var getProducts = function () {
+                $http.get("https://63ec4a3d32a081172398cd32.mockapi.io/27977/Gemtones").
+                    then(function (response) {
+                        $scope.products = response.data;
+                    });
+            }
+            //Gọi hàm để thực hiện lấy danh sách sản phẩm
+            getProducts();
+            // Tạo hàm lấy sản phẩm theo id
+            $scope.getProduct = function (id) {
+                $http.get("https://63ec4a3d32a081172398cd32.mockapi.io/27977/Gemtones/" + id)
+                    .then(function (response) {
+                        $scope.selectedProduct = response.data;
+                    });
+            }
+            //Tạo hàm thêm sản phẩm mới
+            $scope.newProduct = function () {
+                var data = {
+                    "name": $scope.productName,
+                    "price": $scope.productPrice,
+                    "type": $scope.productType,
+                    "quantity": $scope.productQuantity
+                }
+                console.log(data);
+                $http.post("https://63ec4a3d32a081172398cd32.mockapi.io/27977/Gemtones", data)
+                    .then(function (response) {
+                        console.log(response);
+                        getProducts();//reload
+                    });
+            }
+            //Tạo hàm cập nhật sản phẩm
+            $scope.updateProduct = function (id) {
+                var data = {
+                    "name": $scope.Name,
+                    "price": $scope.Price,
+                    "type": $scope.Type,
+                    "quantity": $scope.Quantity,
+                };
+                console.log(data);
+                $http.put("https://63ec4a3d32a081172398cd32.mockapi.io/27977/Gemtones/" + id, data)
+                    .then(function (response) {
+                        console.log(response);
+                        getProducts();//reload
+                    });
+            }
+            //Tạo hàm xóa sản phẩm
+            $scope.deleteProduct = function (id) {
+                $http.delete("https://63ec4a3d32a081172398cd32.mockapi.io/27977/Gemtones/" + id)
+                    .then(function (response) {
+                        console.log(response);
+                        getProducts();//reload
+                    });
+            }
+        });
+    </script> -->
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

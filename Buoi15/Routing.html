@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <meta charset="UTF-8">
+  <title>My App</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.min.js"></script>
+  
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#/" >Home</a></li>
+      <li><a href="#/about">About</a></li>
+      <li><a href="#/contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div ng-view></div>
+  <script>
+    var app = angular.module('myApp', ['ngRoute']);
+
+    app.config(function($routeProvider, $locationProvider) {
+    $locationProvider.hashPrefix('')
+      $routeProvider
+        .when('/', {
+          templateUrl: '/Bootstrap/Buoi15/home.html',
+          controller: 'HomeController'
+        })
+        .when('/about', {
+          templateUrl: 'about.html',
+          controller: 'AboutController'
+        })
+        .when('/contact', {
+          templateUrl: 'contact.html',
+          controller: 'ContactController'
+        });
+    });
+
+    app.controller('HomeController', function($scope) {
+      $scope.message = 'Welcome to my homepage!';
+    });
+
+    app.controller('AboutController', function($scope) {
+      $scope.message = 'Learn more about me and my background.';
+    });
+
+    app.controller('ContactController', function($scope) {
+      $scope.message = 'Get in touch with me here.';
+    });
+  </script>
+</body>
+</html>

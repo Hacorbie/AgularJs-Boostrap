@@ -1,0 +1,207 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="fonts/icomoon.css">
+    <link rel="stylesheet" type="text/css" href="css/vendor.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&family=Poiret+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="container-fluid" ng-app="web207" ng-controller="web207-ctrl">
+    
+    <div class="container">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNew">
+            <i class="bi bi-plus-circle"></i>
+        </button>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Id</th>
+                    <th> Sale</th>
+                    <th> tradeMark</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in products">
+                    <td> {{product.idProduct}}</td>
+                    <td> {{product.sale}}</td>
+                    <td> {{product.tradeMark}}</td>
+                    <td>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDetail"
+                            ng-click="getProduct(product.idProduct)"> Detail</button>
+                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDelete"
+                            ng-click="getProduct(product.idProduct)"><i class="bi bi-trash"></i>Delete</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUpdate"
+                            ng-click="getProduct(product.idProduct)"><i class="bi bi-tools"></i> Update</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hàm lấy dữ liệu -->
+        <div class="modal" id="modalDetail">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>{{selectedProduct.nameProduct}}</h4>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{selectedProduct.img}}" width="400px">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hàm thêm -->
+        <div class="modal" id="modalNew">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Add New Product</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Sale:
+                            <input type="text" ng-model="productsale" style="width: 460px">
+                        </p>
+                        <p>tradeMark: 
+                            <select name="type" class="form-select" ng-model="producttradeMark">
+                            <option value="Diamond">Diamond</option>
+                            <option value="Ruby">Ruby</option>
+                            <option value="Saphire">Saphire</option>
+                        </select></p>
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="newProduct()"> Add</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modalDelete">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Do you want to delete this product?</h4>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="deleteProduct(selectedProduct.idProduct)"
+                            data-bs-dismiss="modal"> Yes</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="modalUpdate">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Update</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Id:
+                            {{selectedProduct.id}}
+                        </p>
+                        <p>Sale:
+                            <input type="text" ng-model="Sale" style="width: 460px">
+                        </p>
+                        <p>tradeMark: 
+                            <select name="type" class="form-select" ng-model="tradeMark">
+                            <option value="Diamond">Diamond</option>
+                            <option value="Ruby">Ruby</option>
+                            <option value="Saphire">Saphire</option>
+                        </select></p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success" ng-click="updateProduct(selectedProduct.idProduct)"> Update</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = angular.module("web207", []);
+        app.controller("web207-ctrl", function ($scope, $http) {
+            //Tạo hàm lấy danh sách sản phẩm
+            var getProducts = function () {
+                $http.get("https://63ec4a1abe929df00ca8f8cd.mockapi.io/ph28042/dong-ho").
+                    then(function (response) {
+                        $scope.products = response.data;
+                    });
+            }
+            //Gọi hàm để thực hiện lấy danh sách sản phẩm
+            getProducts();
+            // Tạo hàm lấy sản phẩm theo id
+            $scope.getProduct = function (idProduct) {
+                $http.get("https://63ec4a1abe929df00ca8f8cd.mockapi.io/ph28042/dong-ho/" + idProduct)
+                    .then(function (response) {
+                        $scope.selectedProduct = response.data;
+                    });
+            }
+            //Tạo hàm thêm sản phẩm mới
+            $scope.newProduct = function () {
+                var data = {
+                    "sale": $scope.productsale,
+                    "tradeMark": $scope.producttradeMark
+                }
+                console.log(data);
+                $http.post("https://63ec4a1abe929df00ca8f8cd.mockapi.io/ph28042/dong-ho", data)
+                    .then(function (response) {
+                        console.log(response);
+                        getProducts();//reload
+                    });
+            }
+            //Tạo hàm cập nhật sản phẩm
+            $scope.updateProduct = function (id) {
+                var data = {
+                    "sale": $scope.sale,
+                    "tradeMark": $scope.tradeMark
+                };
+                console.log(data);
+                $http.put("https://63ec4a1abe929df00ca8f8cd.mockapi.io/ph28042/dong-ho/" + id, data)
+                    .then(function (response) {
+                        console.log(response);
+                        getProducts();//reload
+                    });
+            }
+            //Tạo hàm xóa sản phẩm
+            $scope.deleteProduct = function (id) {
+                $http.delete("https://63ec4a1abe929df00ca8f8cd.mockapi.io/ph28042/dong-ho/" + id)
+                    .then(function (response) {
+                        console.log(response);
+                        getProducts();//reload
+                    });
+            }
+        });
+    </script>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

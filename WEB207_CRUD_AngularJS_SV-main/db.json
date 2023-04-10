@@ -1,0 +1,37 @@
+{
+    "SinhVien": [
+        {
+          "price": "1800",
+          "name": "Triangle Diamond",
+          "gioitinh": false,
+          "quantity": "2",
+          "type": "udpm",
+          "id": "1"
+        },
+        {
+          "price": "1700",
+          "name": "name 2",
+          "gioitinh": true,
+          "quantity": 3,
+          "type": "tktw",
+          "id": "2"
+        },
+        {
+          "price": 9,
+          "name": "name 3",
+          "gioitinh": false,
+          "quantity": 14,
+          "type": "ltmt",
+          "id": "3"
+        },
+        {
+          "price": 44,
+          "name": "name 4",
+          "gioitinh": true,
+          "quantity": 47,
+          "type": "udpm",
+          "id": "4"
+        }
+        
+      ]
+}

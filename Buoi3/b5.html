@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="IT27977" ng-controller="ctrl">
+        <h1>Hello, {{name}}</h1>
+        <hr/>
+        <p ng-repeat="item in items">{{item.author}}: {{item.quote}}</p>
+    </div>
+    <script>
+        var app = angular.module("IT27977", []);
+        app.controller("ctrl", function($scope, $http) {
+            $scope.name = "IT27977";
+            $http.get("https://strangerthings-quotes.vercel.app/api/quotes/5").then(function(response) {
+                var data = response.data;
+                $scope.items = data;
+            });
+
+        });
+    </script>
+</body>
+
+</html>

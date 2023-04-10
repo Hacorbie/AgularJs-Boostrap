@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search filter</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+    <div>
+        <input type="text" ng-model="search" placeholder="Search">
+        <table>
+            <tr ng-repeat="x in listSV | filter:search">
+                <td>
+                    {{x.name}}
+                </td>
+                <td>
+                    {{x.price}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myController', function ($scope, $http) {
+        $scope.listSV = [];
+        $http.get('https://63ec4a3d32a081172398cd32.mockapi.io/27977/Gemtones').then(function (response) {
+            $scope.listSV = response.data;
+            console.log($scope.listSV);
+
+        });
+    });
+</script>
+
+</html>
